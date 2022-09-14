@@ -1,1 +1,1 @@
-This program prints the largest of three integers.
+Prints out 3 large integers
