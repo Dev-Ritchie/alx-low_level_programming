@@ -1,1 +1,1 @@
-Contains all the prototype
+Write a function that concatenates two strings.
