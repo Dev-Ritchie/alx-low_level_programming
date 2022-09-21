@@ -1,21 +1,22 @@
 #include "main.h"
 
 /**
- * _strcmp - compare two strings
- * @s1: one string
- * @s2: one string
- * Return: int that tells num spaces in between
+ * reverse_array - reverse array elements
+ * @a: array
+ * @n: number of elements in array
  */
 
-int _strcmp(char *s1, char *s2)
+void reverse_array(int *a, int n)
 {
-	int i = 0;
 
-	while (*(s1 + i) == *(s2 + i) && *(s1 + i))
-		i++;
+	int tmp, beg = 0;
+	int end = n - 1; /* omit null terminator in length */
 
-	if (*(s2 + i))
-		return (*(s1 + i) - *(s2 + i));
-	else
-		return (0);
+	while (beg < end)
+	{
+		tmp = *(a + beg);
+		*(a + beg) = *(a + end);
+		*(a + end) = tmp;
+		beg++, end--;
+	}
 }
