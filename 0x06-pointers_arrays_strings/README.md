@@ -1,1 +1,1 @@
-Write a function that copies a string
+Write a function that prints an integer.
