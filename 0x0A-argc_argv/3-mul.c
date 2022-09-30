@@ -4,14 +4,15 @@
 
 int main(int argc, char *argv[])
 {
-	int m1, m2;
-	m1 = (argv[1]);
-	m2 = (argv[2]);
+
+	/* validate input */
 	if (argc != 3)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	printf("%d\n", atoi(m1) * atoi(m2));
+
+	/* mulitply two arguments passed via cmd line */
+	printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
 	return (0);
-}
+
