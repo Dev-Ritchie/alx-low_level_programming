@@ -1,37 +1,52 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "main.h"
-
+#include <stdio.h>
+#include <stdlib.h>
 /**
- * _strdup - returns a pointer to a newly allocated space in memory,
- * which contains a copy of the string given as a parameter
- * @str: string to duplicate
- * Return: pointer to duplicated string in allocated memory
+ * str_concat - concats strings
+ * @s1: string 1
+ * @s2: string 2
+ * Return: returns concated string
  */
-
-char *_strdup(char *str)
+char *str_concat(char *s1, char *s2)
 {
-	char *duplicate_str;
-	int i = 0, len = 0;
-
-	if (str == NULL) /* validate str input */
-		return (NULL);
-
-	while (*(str + i))
-		len++, i++;
-	len++; /* add null terminator to length */
-
-	duplicate_str = malloc(sizeof(char) * len); /* allocate memory */
-
-	if (duplicate_str == NULL) /* validate memory */
-		return (NULL);
+	int i, len1, len2;
+	char *conc;
 
 	i = 0;
-	while (i < len)
+	len1 = 0;
+	len2 = 0;
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+
+	while (s1[i] != '\0')
 	{
-		*(duplicate_str + i) = *(str + i);
 		i++;
+		len1++;
 	}
 
-	return (duplicate_str);
+	i = 0;
+
+	while (s2[i] != '\0')
+	{
+		i++;
+		len2++;
+	}
+
+	conc = malloc(sizeof(char) * (len1 + len2 + 1));
+	if (conc == NULL)
+		return (NULL);
+
+	for (i = 0; i < len1; i++)
+	{
+		conc[i] = s1[i];
+	}
+
+	for (i = 0; i < len2; i++)
+	{
+		conc[i + len1] = s2[i];
+	}
+	conc[i + len1] = '\0';
+	return (conc);
 }
