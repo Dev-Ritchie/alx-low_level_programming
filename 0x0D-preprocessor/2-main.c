@@ -1,9 +1,8 @@
 #include <stdlib.h>
+#include <stdio.h>
 
-int main ()
+int main (void)
 {
- 	printf("%s\n", __FILE__);
-	
+	printf("%s\n", __FILE__);
 	return(0);
-
 }
