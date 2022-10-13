@@ -1,1 +1,1 @@
-This is the variadic function directory
+This is the directory
