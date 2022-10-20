@@ -1,1 +1,1 @@
-This is the linked list
+this is the linked list directory
